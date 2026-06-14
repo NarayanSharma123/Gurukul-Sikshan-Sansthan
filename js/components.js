@@ -7,7 +7,7 @@ const navbar = `
 
         <div class="logo">
 
-            <img src="../images/gss logo.png"
+            <img src="images/gss logo.png"
                  alt="GSS School Logo"
                  class="logo-img">
 
