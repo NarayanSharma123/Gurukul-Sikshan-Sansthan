@@ -1,0 +1,116 @@
+.contact-hero {
+  height: 60vh;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=1600");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.overlay h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 70px 20px;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.contact-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+}
+
+.contact-card i {
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 15px;
+}
+
+.contact-card a {
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.map-container {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.map-container iframe {
+  display: block;
+  width: 100%;
+}
+
+.map-box {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  padding: 40px;
+  text-align: center;
+}
+
+.map-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: var(--primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+}
+
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.social-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.social-card i {
+  display: block;
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .overlay h1 {
+    font-size: 2rem;
+  }
+}

@@ -1,0 +1,291 @@
+/* ==========================================
+   CSS VARIABLES - LIGHT & DARK THEME
+   ========================================== */
+:root {
+  --bg-primary: #ffffff;
+  --bg-surface: #f4f6f9;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --border: #e2e8f0;
+  --footer-bg: #0f172a;
+  --footer-text: #94a3b8;
+  --transition: all 0.3s ease;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #0f172a;
+  --bg-surface: #1e293b;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --accent: #3b82f6;
+  --accent-hover: #60a5fa;
+  --border: #334155;
+}
+
+/* ==========================================
+   RESET & BASE STYLES
+   ========================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: var(--transition);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  padding-top: 80px; /* Offset for sticky nav */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ==========================================
+   HEADER & NAVIGATION
+   ========================================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: var(--bg-surface);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+  z-index: 1000;
+  transition: var(--transition);
+}
+
+.logo a {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--accent);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-links a {
+  font-weight: 500;
+  transition: var(--transition);
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--accent);
+}
+
+/* Hamburger Menu Toggle */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: var(--text-primary);
+  transition: var(--transition);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  padding: 0.5rem;
+}
+
+/* ==========================================
+   FOOTER STYLING
+   ========================================== */
+footer {
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
+  padding: 4rem 5% 2rem 5%;
+  margin-top: auto;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-section h3 {
+  color: #ffffff;
+  margin-bottom: 1.2rem;
+  font-size: 1.2rem;
+}
+
+.footer-section p,
+.footer-section ul li {
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-icons a {
+  display: inline-block;
+  padding: 0.5rem;
+  background: #1e293b;
+  border-radius: 5px;
+  color: #ffffff;
+  transition: var(--transition);
+}
+
+.social-icons a:hover {
+  background: var(--accent);
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #334155;
+  padding-top: 1.5rem;
+  font-size: 0.85rem;
+}
+
+/* ==========================================
+   FLOATING COMPONENTS
+   ========================================== */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #25d366;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 999;
+  transition: var(--transition);
+}
+
+.whatsapp-btn:hover {
+  transform: translateY(-5px);
+  background-color: #128c7e;
+}
+
+.scroll-top {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  background-color: var(--accent);
+  color: white;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+  z-index: 999;
+}
+
+.scroll-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN (MEDIA QUERIES)
+   ========================================== */
+@media (max-width: 968px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 80px;
+    right: -100%;
+    width: 70%;
+    height: calc(100vh - 80px);
+    background-color: var(--bg-surface);
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 0;
+    transition: 0.4s ease;
+    box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  /* Hamburger Transform Effects */
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 5px);
+  }
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -5px);
+  }
+}

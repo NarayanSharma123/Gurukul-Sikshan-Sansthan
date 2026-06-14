@@ -1,0 +1,57 @@
+.gallery-hero {
+  height: 60vh;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("https://images.unsplash.com/photo-1513258496099-48168024aec0?w=1600");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.overlay h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 70px 20px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .overlay h1 {
+    font-size: 2rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid img {
+    height: 220px;
+  }
+}
